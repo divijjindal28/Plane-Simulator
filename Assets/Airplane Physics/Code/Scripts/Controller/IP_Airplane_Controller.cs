@@ -41,7 +41,7 @@ namespace IndiePixel {
                 characteristics = GetComponent<IP_Airplane_Characteristics>();
                 if (characteristics)
                 {
-                    characteristics.InitCharacteristics(rb);
+                    characteristics.InitCharacteristics(rb, input);
                 }
             }
 

@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034c536921c1a4307be8fe8aef1dcc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 1500
+  maxForce: 2000
   maxRPM: 2550
   powerCurve:
     serializedVersion: 2
@@ -636,8 +636,8 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2885534286812581607}
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.11
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -740,8 +740,8 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2885534286812581517}
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.32
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -1032,7 +1032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531498134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.49, z: -10}
+  m_LocalPosition: {x: 0, y: 4.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1297,8 +1297,8 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2885534286812581619}
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.32
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -3448,7 +3448,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0.1
-  m_AngularDrag: 10
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3580,6 +3580,10 @@ MonoBehaviour:
   normalisedMPH: 0
   finalLiftForce2: {x: 0, y: 0, z: 0}
   liftDir2: {x: 0, y: 0, z: 0}
+  dragFactor: 0.01
+  pitchSpeed: 4000
+  rollSpeed: 2500
+  rollTorque2: {x: 0, y: 0, z: 0}
 --- !u!4 &8934527499518867571
 Transform:
   m_ObjectHideFlags: 0
