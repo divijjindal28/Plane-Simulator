@@ -9,14 +9,15 @@ namespace IndiePixel {
     {
 
         #region Variables
-        private Rigidbody rb;
-        private AudioSource aSource;
+        protected Rigidbody rb;
+        protected AudioSource aSource;
+        
         #endregion
 
        
         #region Buildin Methods
         // Start is called before the first frame update
-        void Start()
+        public virtual void Start()
         {
             rb = GetComponent<Rigidbody>();
             aSource = GetComponent<AudioSource>();
@@ -40,6 +41,8 @@ namespace IndiePixel {
         {
 
         }
+
+        
         #endregion
     }
 }

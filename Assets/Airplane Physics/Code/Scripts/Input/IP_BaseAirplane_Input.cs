@@ -6,6 +6,9 @@ namespace IndiePixel {
     public class IP_BaseAirplane_Input : MonoBehaviour
     {
         #region Variables
+        public float throttleSpeed = 0.3f;
+        protected float stickyThrottle;
+        
         protected float pitch = 0f;
         protected float roll = 0f;
         protected float yaw = 0f;
@@ -23,6 +26,10 @@ namespace IndiePixel {
         public float Throttle { get { return throttle; } }
         public float Flaps { get { return flaps; } }
         public float Brake { get { return brake; } }
+        public float StickyThrottle
+        {
+            get { return stickyThrottle; }
+        }
         #endregion
 
         #region Builtin Methods
@@ -44,7 +51,8 @@ namespace IndiePixel {
             pitch = Input.GetAxis("Vertical");
             roll = Input.GetAxis("Horizontal");
             yaw = Input.GetAxis("Yaw");
-            throttle = Input.GetAxis("Throttle");    
+            throttle = Input.GetAxis("Throttle");
+            StickyThrottleControl();
 
             brake = Input.GetKey(brakeKey) ? 1f: 0f;
 
@@ -58,6 +66,13 @@ namespace IndiePixel {
             }
 
             flaps = Mathf.Clamp(flaps, 0, maxFlapsIncrements);
+        }
+
+        void StickyThrottleControl()
+        {
+            stickyThrottle = stickyThrottle + (-throttle * throttleSpeed * Time.deltaTime);
+            stickyThrottle = Mathf.Clamp01(stickyThrottle);
+
         }
         #endregion
     }

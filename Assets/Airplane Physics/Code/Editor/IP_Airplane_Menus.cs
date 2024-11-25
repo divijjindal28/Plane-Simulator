@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class IP_Airplane_Menus : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+namespace IndiePixel {
+    public static class IP_Airplane_Menus
     {
-        
+        [MenuItem("Airplane Tools/Create New Airplane")]
+
+        public static void CreateNewAirplane() {
+            GameObject curSelected = Selection.activeGameObject;
+            if (curSelected) {
+                IP_Airplane_Controller curController =  curSelected.AddComponent<IP_Airplane_Controller>();
+                GameObject curCOG = new GameObject("COG");
+                curCOG.transform.SetParent(curSelected.transform);
+                curController.centerOfGravity = curCOG.transform;
+            }
+
+        }
     }
 }
+
