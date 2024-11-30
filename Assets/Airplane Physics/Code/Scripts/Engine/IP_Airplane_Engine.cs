@@ -17,9 +17,15 @@ namespace IndiePixel {
         [Header("Propellers")]
         public IP_Airplane_Propeller propeller;
 
+        private float TEST__finalPower;
+        private float TEST__finalThrottle;
         #endregion
 
         #region Builtin Methods
+        private void Update()
+        {
+            Debug.Log("FinalForce : "+ TEST__finalThrottle);
+        }
         #endregion
 
 
@@ -27,14 +33,15 @@ namespace IndiePixel {
         public Vector3 CalculateForce(float throttle) {
             float finalThrottle = Mathf.Clamp01(throttle);
             finalThrottle = powerCurve.Evaluate(finalThrottle);
-
+            TEST__finalThrottle = finalThrottle;
             float currentRPM = finalThrottle * maxRPM;
             if (propeller) {
                 propeller.HandlePropeller(currentRPM);
             }
 
             float finalPower = finalThrottle * maxForce;
-            Vector3 finalForce = transform.TransformDirection(transform.forward) * finalPower;
+            TEST__finalPower = finalPower;
+            Vector3 finalForce = transform.forward * finalPower;
             return finalForce;
         }
         #endregion
