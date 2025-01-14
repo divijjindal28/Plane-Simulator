@@ -7,6 +7,7 @@ namespace IndiePixel {
     {
         #region Variables
         [Header("Propeller Properties")]
+        public float minRotationRPM = 30f;
         public float minQuadRPMs = 300f;
         public float minTextureSwap = 600f;
         public GameObject mainProp;
@@ -30,6 +31,7 @@ namespace IndiePixel {
         #region Custom Methods
         public void HandlePropeller(float currentRPM) {
             float dps = ((currentRPM * 360f) / 60f) * Time.deltaTime;
+            dps = Mathf.Clamp(dps, 10f, minRotationRPM);
             transform.Rotate(Vector3.forward, dps);
 
             if(mainProp && blurredProp)

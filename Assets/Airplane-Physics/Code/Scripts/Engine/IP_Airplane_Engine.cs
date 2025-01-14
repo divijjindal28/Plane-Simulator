@@ -24,7 +24,7 @@ namespace IndiePixel {
         #region Builtin Methods
         private void Update()
         {
-            Debug.Log("FinalForce : "+ TEST__finalThrottle);
+            //Debug.Log("FinalForce : "+ TEST__finalThrottle);
         }
         #endregion
 

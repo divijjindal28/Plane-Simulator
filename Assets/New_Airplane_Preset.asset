@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810aab64c6a264dda9109a69dc96ca2f, type: 3}
   m_Name: New_Airplane_Preset
   m_EditorClassIdentifier: 
-  cogPosition: {x: 0, y: 1.04, z: 0.518}
+  cogPosition: {x: 0, y: -0.59, z: 0.518}
   airplaneWeight: 800
   maxMPH: 110
   rbLerpSpeed: 0.3

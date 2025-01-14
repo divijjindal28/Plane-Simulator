@@ -8,10 +8,10 @@ namespace IndiePixel
         {
         protected override void HandleInput()
         {
-            pitch = Input.GetAxis("Vertical");
-            roll = Input.GetAxis("Horizontal");
-            yaw = Input.GetAxis("X_RH_Stick");
-            throttle = Input.GetAxis("X_RV_Stick");
+            pitch += Input.GetAxis("Vertical");
+            roll += Input.GetAxis("Horizontal");
+            yaw += Input.GetAxis("X_RH_Stick");
+            throttle += Input.GetAxis("X_RV_Stick");
 
             brake = Input.GetAxis("Fire1");
 
@@ -27,6 +27,8 @@ namespace IndiePixel
             }
 
             flaps = Mathf.Clamp(flaps, 0, maxFlapsIncrements);
+
+            cameraSwitch = Input.GetButtonDown("X_Y_Button") || Input.GetKeyDown("X_Y_Button");
         }
     }
 }

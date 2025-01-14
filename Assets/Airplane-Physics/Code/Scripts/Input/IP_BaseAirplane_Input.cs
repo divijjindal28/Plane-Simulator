@@ -17,6 +17,10 @@ namespace IndiePixel {
         public int maxFlapsIncrements = 3;
         public KeyCode brakeKey = KeyCode.Space;
         protected float brake = 0;
+
+        [SerializeField]
+        protected KeyCode cameraKey = KeyCode.C;
+        protected bool cameraSwitch = false;
         #endregion
 
         #region Properties
@@ -30,6 +34,7 @@ namespace IndiePixel {
         {
             get { return stickyThrottle; }
         }
+        public bool CameraSwitch { get { return cameraSwitch; } }
         #endregion
 
         #region Builtin Methods
@@ -43,6 +48,7 @@ namespace IndiePixel {
         void Update()
         {
             HandleInput();
+            ClampInputs();
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace IndiePixel {
             }
 
             flaps = Mathf.Clamp(flaps, 0, maxFlapsIncrements);
+
+            cameraSwitch = Input.GetKeyDown(cameraKey);
         }
 
         void StickyThrottleControl()
@@ -73,6 +81,14 @@ namespace IndiePixel {
             stickyThrottle = stickyThrottle + (-throttle * throttleSpeed * Time.deltaTime);
             stickyThrottle = Mathf.Clamp01(stickyThrottle);
 
+        }
+
+        protected void ClampInputs()
+        {
+            pitch = Mathf.Clamp(pitch, -1, 1);
+            roll = Mathf.Clamp(roll, -1, 1);
+            yaw = Mathf.Clamp(yaw, -1, 1);
+            throttle = Mathf.Clamp(throttle, -1, 1);
         }
         #endregion
     }
