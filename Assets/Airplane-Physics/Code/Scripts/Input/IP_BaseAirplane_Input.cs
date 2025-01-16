@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace IndiePixel {
@@ -35,6 +36,8 @@ namespace IndiePixel {
             get { return stickyThrottle; }
         }
         public bool CameraSwitch { get { return cameraSwitch; } }
+
+        public TextMeshPro textMeshProUGUI;
         #endregion
 
         #region Builtin Methods
@@ -48,18 +51,72 @@ namespace IndiePixel {
         void Update()
         {
             HandleInput();
+            StickyThrottleControl();
             ClampInputs();
         }
         #endregion
 
         #region Custom Methods
+
+        public void OnRightJoystickValueChangeX(float x)
+        {
+            Debug.Log("IP_BaseAirplane_Input : OnRightJoystickValueChangeX : " + x.ToString());
+            yaw = x;
+        }
+        
+        public void OnRightJoystickValueChangeY(float y)
+        {
+            Debug.Log("IP_BaseAirplane_Input : OnRightJoystickValueChangeY : " + y.ToString());
+            throttle = -y;
+        }
+
+        public void OnLeftJoystickValueChangeX(float x)
+        {
+            Debug.Log("IP_BaseAirplane_Input : OnLeftJoystickValueChangeX : " + x.ToString());
+            roll = x;
+        }
+
+        public void OnLeftJoystickValueChangeY(float y)
+        {
+            Debug.Log("IP_BaseAirplane_Input : OnLeftJoystickValueChangeY : " + y.ToString()); ;
+            pitch = y;
+        }
+
+        public void OnBrakesApplied()
+        {
+            brake = 1f;
+        }
+
+        public void OnBrakeReleased()
+        {
+            brake = 0f;
+        }
+
+        public void OnFlapValueChange(float y)
+        {
+            if (y >= 0 && y < 0.25f) {
+                flaps = 0;
+            }
+            else if(y >= 0.25f && y < 0.5f) {
+                flaps = 1;
+            }
+            else if (y >= 0.5f && y < 0.75f)
+            {
+                flaps = 2;
+            }
+            else if (y >= 0.75f && y <= 1f)
+            {
+                flaps = 3;
+            }
+        }
+
         protected virtual void HandleInput() {
             pitch = Input.GetAxis("Vertical");
             roll = Input.GetAxis("Horizontal");
             yaw = Input.GetAxis("Yaw");
             throttle = Input.GetAxis("Throttle");
-            StickyThrottleControl();
 
+            textMeshProUGUI.text = brake.ToString();
             brake = Input.GetKey(brakeKey) ? 1f: 0f;
 
             if (Input.GetKeyDown(KeyCode.F)) {

@@ -1,0 +1,5 @@
+# ninja log v5
+118	223	1736927416546922071	/Users/divijjindal/Plane-Simulator/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z572j3t/obj/armeabi-v7a/libswappywrapper.so	ebbb0e9f1f54428e
+0	118	1736927416466720187	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	84600c3a17d7245a
+0	6798	1736927900088000646	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	84600c3a17d7245a
+6798	11832	1736927904275473329	/Users/divijjindal/Plane-Simulator/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z572j3t/obj/armeabi-v7a/libswappywrapper.so	ebbb0e9f1f54428e

@@ -21,6 +21,14 @@ namespace IndiePixel {
         private float TEST__finalThrottle;
         #endregion
 
+
+        #region Properties
+        private float currentRPM;
+        public float CurrentRPM {
+            get { return currentRPM; }
+        }
+        #endregion
+
         #region Builtin Methods
         private void Update()
         {
@@ -34,7 +42,7 @@ namespace IndiePixel {
             float finalThrottle = Mathf.Clamp01(throttle);
             finalThrottle = powerCurve.Evaluate(finalThrottle);
             TEST__finalThrottle = finalThrottle;
-            float currentRPM = finalThrottle * maxRPM;
+            currentRPM = finalThrottle * maxRPM;
             if (propeller) {
                 propeller.HandlePropeller(currentRPM);
             }
