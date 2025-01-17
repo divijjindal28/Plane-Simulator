@@ -2061,7 +2061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034c536921c1a4307be8fe8aef1dcc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 3000
+  maxForce: 2000
   maxRPM: 2550
   powerCurve:
     serializedVersion: 2
@@ -3780,6 +3780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -3895,7 +3899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d5c1b26d68617424d9a91189e623681a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -846.1
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5c1b26d68617424d9a91189e623681a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3903,7 +3907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5c1b26d68617424d9a91189e623681a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 706.6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5c1b26d68617424d9a91189e623681a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3939,7 +3943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5c1b26d68617424d9a91189e623681a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4039,7 +4043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &1194562406
 Camera:
   m_ObjectHideFlags: 0
@@ -5696,7 +5700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1531498135
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5715,7 +5719,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7582,6 +7586,7 @@ GameObject:
   - component: {fileID: 1807851167}
   - component: {fileID: 1807851166}
   - component: {fileID: 1807851165}
+  - component: {fileID: 1807851168}
   m_Layer: 0
   m_Name: Attitude
   m_TagString: Untagged
@@ -7662,6 +7667,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807851163}
   m_CullTransparentMesh: 1
+--- !u!114 &1807851168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807851163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e9a7c06948c4652bdca2aef6d3156e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airplane: {fileID: 5374554924235203562}
+  bgRect: {fileID: 1986254148}
+  arrowRect: {fileID: 1041826523}
 --- !u!1 &1813177792
 GameObject:
   m_ObjectHideFlags: 0
@@ -8571,7 +8591,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452377697352257601, guid: 14c58732eb66246538a99ef4e189302e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365483179366377020, guid: 14c58732eb66246538a99ef4e189302e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474929371829755769, guid: 14c58732eb66246538a99ef4e189302e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.4
       objectReference: {fileID: 0}
     - target: {fileID: 6608417982520894339, guid: 14c58732eb66246538a99ef4e189302e, type: 3}
       propertyPath: m_LocalScale.x
@@ -10806,7 +10834,7 @@ MonoBehaviour:
   input: {fileID: 5374554924235203561}
   characteristics: {fileID: 7509561683967224345}
   centerOfGravity: {fileID: 1405240297}
-  airplaneWeight: 1200
+  airplaneWeight: 800
   engines:
   - {fileID: 598728478}
   wheels:
@@ -11007,7 +11035,7 @@ Transform:
   m_GameObject: {fileID: 6766406890159223743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -845.77, y: 1.86, z: 684.5}
+  m_LocalPosition: {x: 0, y: 1.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11045,31 +11073,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0075683594
+      time: 0
       value: 0
-      inSlope: -0.010360405
-      outSlope: -0.010360405
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.106082
-    - serializedVersion: 3
-      time: 0.66805017
-      value: 1.0032643
-      inSlope: 3.5483766
-      outSlope: 0.5667051
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.036421847
-      outWeight: 0.1541452
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: -0.12844722
-      outSlope: -0.12844722
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.07344639
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
