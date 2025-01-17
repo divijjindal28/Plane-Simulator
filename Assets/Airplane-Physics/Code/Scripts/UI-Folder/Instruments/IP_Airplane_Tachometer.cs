@@ -31,7 +31,7 @@ namespace IndiePixel
                 Debug.Log("IP_Airplane_Tachometer HandleAirplaneUI RPM : " + normalizedRPM);
                 float wantedRotation = maxRotation * -normalizedRPM;
                 finalRotation = Mathf.Lerp(finalRotation, wantedRotation, Time.deltaTime * pointerSpeed);
-                pointer.rotation = Quaternion.Euler(0, 0, wantedRotation);
+                pointer.localRotation = Quaternion.Euler(0, 0, wantedRotation);
             }
             throw new System.NotImplementedException();
         }

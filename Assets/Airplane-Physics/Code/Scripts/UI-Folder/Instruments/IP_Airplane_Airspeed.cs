@@ -30,7 +30,7 @@ namespace IndiePixel {
                 float normalizedKnots = Mathf.InverseLerp(0f, maxIndicatedKnots, currentKnots);
                 float wantedRotation = maxRotation * normalizedKnots;
                 //finalRotation = Mathf.Lerp(finalRotation, wantedRotation, Time.deltaTime * pointerSpeed);
-                pointer.rotation = Quaternion.Euler(0, 0, -wantedRotation);
+                pointer.localRotation = Quaternion.Euler(0, 0, -wantedRotation);
             }
             throw new System.NotImplementedException();
         }

@@ -40,7 +40,7 @@ namespace IndiePixel {
                 if (thousandsPointer) {
                     float normalizedThousands = Mathf.InverseLerp(0f, 10f, currentThousands);
                     float thousandsRotation = 360 * normalizedThousands;
-                    thousandsPointer.rotation = Quaternion.Euler(0, 0, -thousandsRotation);
+                    thousandsPointer.localRotation = Quaternion.Euler(0, 0, -thousandsRotation);
                     
                 }
 
@@ -48,7 +48,7 @@ namespace IndiePixel {
                 {
                     float normalizedHundereds = Mathf.InverseLerp(0f, 1000f, currentHundereds);
                     float hunderedsRotation = 360 * normalizedHundereds;
-                    hundredsPointer.rotation = Quaternion.Euler(0, 0, -hunderedsRotation);
+                    hundredsPointer.localRotation = Quaternion.Euler(0, 0, -hunderedsRotation);
 
                 }
             }

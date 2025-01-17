@@ -111,10 +111,10 @@ namespace IndiePixel {
         }
 
         protected virtual void HandleInput() {
-            pitch = Input.GetAxis("Vertical");
-            roll = Input.GetAxis("Horizontal");
-            yaw = Input.GetAxis("Yaw");
-            throttle = Input.GetAxis("Throttle");
+            //pitch = Input.GetAxis("Vertical");
+            //roll = Input.GetAxis("Horizontal");
+            //yaw = Input.GetAxis("Yaw");
+            //throttle = Input.GetAxis("Throttle");
 
             textMeshProUGUI.text = brake.ToString();
             brake = Input.GetKey(brakeKey) ? 1f: 0f;

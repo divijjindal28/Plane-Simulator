@@ -28,12 +28,12 @@ namespace IndiePixel {
 
                 if (bgRect) {
                     Quaternion bankRot = Quaternion.Euler(0, 0, bankAngle);
-                    bgRect.transform.rotation = bankRot;
+                    bgRect.transform.localRotation = bankRot;
 
                     Vector3 wantedPosition = new Vector3(0f, -pitchAngle , 0f);
                     bgRect.anchoredPosition = wantedPosition;
                     if (arrowRect) {
-                        arrowRect.transform.rotation = bankRot;
+                        arrowRect.transform.localRotation = bankRot;
                     }
                 }
 
