@@ -47,7 +47,7 @@ namespace IndiePixel {
         #endregion
 
 
-        #region Builtin Methods
+        #region Properties
         #endregion
 
 
@@ -79,10 +79,10 @@ namespace IndiePixel {
             Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
             speed = rb.velocity.magnitude;
             forwardSpeed = Mathf.Max(0, localVelocity.z);
-            forwardSpeed = Mathf.Clamp(forwardSpeed, 0f, maxMPS);
+            //forwardSpeed = Mathf.Clamp(forwardSpeed, 0f, maxMPS);
             
             mph = forwardSpeed * mpsTomph;
-            mph = Mathf.Clamp(mph, 0f, maxMPH);
+            //mph = Mathf.Clamp(mph, 0f, maxMPH);
             normalisedMPH = Mathf.InverseLerp(0f, maxMPH , mph);
             //Debug.DrawRay(transform.position,transform.position+rb.velocity, Color.green);
         }
